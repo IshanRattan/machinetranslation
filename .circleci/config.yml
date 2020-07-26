@@ -10,16 +10,4 @@ workflows:
   welcome:
     # Run the welcome/run job in its own container
     jobs:
-      nmt:
-      working_directory: ~/nmt
-        docker:
-        - image: circleci/python:3.6
-        steps:
-        - checkout
-        - run:
-          name: Running machine translation
-          command: |
-          virtualenv venv
-          . venv/bin/activate
-          pip install --upgrade pip
-          pip install flask
+      - welcome/run
